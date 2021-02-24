@@ -66,8 +66,8 @@ fars_accident_2014_2019 %>%
 
 
 # Title: Fix the Errors (Question 1) #####
-# Author: Your Name 
-# Author's Email: Your Email 
+# Author: John Covington
+# Author's Email: jpcovin@clemson.edu
 # Date Created: 2021-02-20
 
 # Purpose:
@@ -90,12 +90,12 @@ fars_accident_2014_2019
 str(fars_accident_2014_2019)
 
 # Check the structure of `DAY_WEEK` in `fars_accident_2014_2019` (1 error) ####
-fars_df <- fars_df %>% 
+fars_accident_2014_2019 <- fars_accident_2014_2019 %>% 
 select(DAY_WEEK)
-str(fars_df)
+str(fars_accident_2014_2019)
 
 # What years are represented in the data set? (1 error) ####
-summary(fars_df$YEAR)
+summary(fars_accident_2014_2019$YEAR)
 vector_numeric <- c(2014, 2015, 2016, 2017, 2018, 2019)
 
 # Count How Many Accidents per State, arrange in descending order, keep only top 10 (2 errors) ####
@@ -107,12 +107,12 @@ fars_accident_2014_2019 %>%
   head(n=10)
 
 # Count How Many Fatal Accidents involved Pedestrians (1 error) ####
-fars_accident %>% 
+fars_accident_2014_2019 %>% 
   filter(PEDS == 0 & FATALS == 1) %>% 
   nrow()
   
 # What percentage of the total number of accidents involved pedestrians, Code as an object: `perc_accidents_pedestrians` (1 error) ####
-perc_accidents_pedestrians <-fars_df %>% 
+perc_accidents_pedestrians <-fars_accident_2014_2019 %>% 
   group_by(FATALS) %>% 
   summarize(prop=n() / 199065 * 100)
 
